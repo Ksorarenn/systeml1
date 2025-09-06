@@ -16,6 +16,7 @@ public class Main {
                 4. массивы
                 5. BigInteger
                 6. Побитовые операции
+                7. Логарифм
                 """);
         int n = in.nextInt();
         switch (n){
@@ -25,6 +26,7 @@ public class Main {
             case 4: System.out.println(arrs(a,b));break;
             case 5: System.out.println(bigint(a,b));break;
             case 6: System.out.println(bits(a,b));break;
+            case 7: System.out.println(log(a,b));break;
             default:break;
         }
 
@@ -94,6 +96,11 @@ public class Main {
             b = carry << 1;
         }
         return a;
+    }
+    public static int log(int a, int b) {
+        double temp = Math.exp(Math.log(Math.abs(a)) + Math.log(Math.abs(b)));
+        int result= (int)Math.round(temp);
+        return result;
     }
 }
 /*
